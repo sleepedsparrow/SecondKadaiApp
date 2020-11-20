@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,94 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SecondKadaiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-sB-6JU">
+                                <rect key="frame" x="40" y="265" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-PC-hPb">
+                                <rect key="frame" x="191.5" y="399" width="31" height="30"/>
+                                <state key="normal" title="決定"/>
+                                <connections>
+                                    <action selector="unwind:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TlV-ld-q3J"/>
+                                    <segue destination="qGd-l2-OUQ" kind="show" id="hqZ-38-CP4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前を表示してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfp-IR-Rxh">
+                                <rect key="frame" x="111.5" y="144" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dfp-IR-Rxh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5c8-B7-oDU"/>
+                            <constraint firstItem="rlp-sB-6JU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Pe-Ep-C4O"/>
+                            <constraint firstItem="dfp-IR-Rxh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9hU-at-jo5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rlp-sB-6JU" secondAttribute="trailing" constant="40" id="WhK-fi-yM9"/>
+                            <constraint firstItem="aKD-PC-hPb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YCq-tv-xyS"/>
+                            <constraint firstItem="aKD-PC-hPb" firstAttribute="top" secondItem="rlp-sB-6JU" secondAttribute="bottom" constant="100" id="ZMD-2U-lMU"/>
+                            <constraint firstItem="rlp-sB-6JU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ate-TO-J3y"/>
+                            <constraint firstItem="rlp-sB-6JU" firstAttribute="top" secondItem="dfp-IR-Rxh" secondAttribute="bottom" constant="100" id="glr-SE-rRN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="inputText" destination="rlp-sB-6JU" id="b0K-Ew-NYg"/>
+                        <outlet property="label" destination="dfp-IR-Rxh" id="dTJ-qA-5aI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="117"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="KIH-Sd-HrT">
+            <objects>
+                <viewController id="qGd-l2-OUQ" customClass="ResultViewController" customModule="SecondKadaiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AcS-jI-BDL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBd-RW-co0">
+                                <rect key="frame" x="186" y="100" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgO-4v-t6x">
+                                <rect key="frame" x="191.5" y="221" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <segue destination="n3k-GZ-Oee" kind="unwind" unwindAction="unwind:" id="y5q-QB-K8V"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="wgO-4v-t6x" firstAttribute="centerX" secondItem="AcS-jI-BDL" secondAttribute="centerX" id="5tZ-lm-Rrd"/>
+                            <constraint firstItem="EBd-RW-co0" firstAttribute="centerX" secondItem="AcS-jI-BDL" secondAttribute="centerX" id="6Tt-8U-Wyb"/>
+                            <constraint firstItem="EBd-RW-co0" firstAttribute="top" secondItem="VkJ-to-JeP" secondAttribute="top" constant="100" id="Uiv-C7-8z4"/>
+                            <constraint firstItem="wgO-4v-t6x" firstAttribute="centerX" secondItem="EBd-RW-co0" secondAttribute="centerX" id="rP2-bY-WWp"/>
+                            <constraint firstItem="wgO-4v-t6x" firstAttribute="top" secondItem="EBd-RW-co0" secondAttribute="bottom" constant="100" id="v67-gm-WzU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VkJ-to-JeP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cKJ-iu-pFE"/>
+                    <connections>
+                        <outlet property="label" destination="EBd-RW-co0" id="nDJ-KC-w3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVp-xS-lb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="n3k-GZ-Oee" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="883" y="117"/>
         </scene>
     </scenes>
 </document>
